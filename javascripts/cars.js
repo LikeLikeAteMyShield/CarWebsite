@@ -26,7 +26,7 @@ function displayCars(arr) {
 	var out = "";
 	var i;
 	for(i=0 ; i<arr.length ; i++) {
-		out += "<div class=\"col-md-4\"><p>" + arr[i].make + " " + arr[i].model + ", " + arr[i].year + "</p><img src=\"" + arr[i].imgUrl + "\" height=\"200\" width=\"300\"></img></div>";
+		out += "<div class=\"col-sm-6 col-md-4\"><div class=\"car\"><img src=\"" + arr[i].imgUrl + "\" height=\"200\" width=\"300\" alt=\"...\"><div class=\"caption\"><h3>" + arr[i].make + " " + arr[i].model + "</h3><h3 class=\"price\">&pound;" + arr[i].price + "</h3><p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Full Specification</a> <a href=\"mailto:email@email.com\" class=\"btn btn-default\" role=\"button\">Enquire</a></p></div></div></div>";
 	}
 	document.getElementById("cars").innerHTML = out;
 }
