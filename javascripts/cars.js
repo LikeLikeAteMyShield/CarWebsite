@@ -34,7 +34,39 @@ function displayCars(arr) {
 	$(".extra-content").slideUp();
 }
 
-displayCars(cars);
+function displayRecent(arr) {
+
+	arr.sort(function(a,b) {
+		return a.dateAdded - b.dateAdded;
+	});
+
+	var out = "";
+
+	for(var i = 0; i < 5; i++) {
+		out += "<div class=\"\"><div class=\"car\"><img src=\"" + arr[i].imgUrl + "\" height=\"200\" width=\"300\" alt=\"...\"><div class=\"caption\"><h3>" + arr[i].make + " " + arr[i].model + "</h3><h3 class=\"price\">&pound;" + arr[i].price + "</h3><p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">More Detail</a> <a href=\"mailto:email@email.com\" class=\"btn btn-default\" role=\"button\">Enquire</a><div class=\"extra-content\"><h1>Blah content<h1></div></p></div></div></div>";
+	}
+	document.getElementById("recent").innerHTML = out;
+	$(".extra-content").slideUp();
+}
+
+function displayCheapest(arr){
+
+	arr.sort(function(a,b) {
+		return a.price - b.price;
+	});
+
+	var out = "";
+
+	for(var i = 0; i < 5; i++) {
+		out += "<div class=\"\"><div class=\"car\"><img src=\"" + arr[i].imgUrl + "\" height=\"200\" width=\"300\" alt=\"...\"><div class=\"caption\"><h3>" + arr[i].make + " " + arr[i].model + "</h3><h3 class=\"price\">&pound;" + arr[i].price + "</h3><p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">More Detail</a> <a href=\"mailto:email@email.com\" class=\"btn btn-default\" role=\"button\">Enquire</a><div class=\"extra-content\"><h1>Blah content<h1></div></p></div></div></div>";
+	}
+	document.getElementById("cheapest").innerHTML = out;
+	$(".extra-content").slideUp();
+}
+
+//displayCars(cars);
+displayRecent(cars);
+displayCheapest(cars);
 
 $(".btn-primary").click(function() {
 	event.preventDefault();
