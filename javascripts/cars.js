@@ -21,14 +21,31 @@ var cars = [
 	{"make" : "Daewoo", "model" : "Lanos", "year" : 2001, "type" : "Hatchback", "doors" : 3, "miles" : 60000, "colour" : "Silver", "price" : 995.00, "dateAdded" : "2014-02-15", "imgUrl" : "../images/lanos.jpg"}
 ];
 
+$(document).ready(function() {
+
 function displayCars(arr) {
 
 	var out = "";
 	var i;
 	for(i=0 ; i<arr.length ; i++) {
-		out += "<div class=\"col-sm-6 col-md-4\"><div class=\"car\"><img src=\"" + arr[i].imgUrl + "\" height=\"200\" width=\"300\" alt=\"...\"><div class=\"caption\"><h3>" + arr[i].make + " " + arr[i].model + "</h3><h3 class=\"price\">&pound;" + arr[i].price + "</h3><p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">Full Specification</a> <a href=\"mailto:email@email.com\" class=\"btn btn-default\" role=\"button\">Enquire</a></p></div></div></div>";
+		out += "<div class=\"col-sm-6 col-md-4\"><div class=\"car\"><img src=\"" + arr[i].imgUrl + "\" height=\"200\" width=\"300\" alt=\"...\"><div class=\"caption\"><h3>" + arr[i].make + " " + arr[i].model + "</h3><h3 class=\"price\">&pound;" + arr[i].price + "</h3><p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">More Detail</a> <a href=\"mailto:email@email.com\" class=\"btn btn-default\" role=\"button\">Enquire</a><div class=\"extra-content\"><h1>Blah content<h1></div></p></div></div></div>";
 	}
 	document.getElementById("cars").innerHTML = out;
+	$(".extra-content").slideUp();
 }
 
 displayCars(cars);
+
+$(".btn-primary").click(function() {
+	event.preventDefault();
+	$(this).closest(".caption").find(".extra-content").slideToggle();
+
+	if( $(this).text()=="More Detail" ) {
+		$(this).text("Less Detail");
+	} 
+	else{
+		$(this).text("More Detail");
+	}
+});
+
+});

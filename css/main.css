@@ -1,6 +1,11 @@
 .car {
 	
 }
+
 .price {
 	color: red;
+}
+
+#extra-content {
+	/*visibility: hidden;*/
 }
