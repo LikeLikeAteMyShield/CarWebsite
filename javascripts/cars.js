@@ -23,15 +23,27 @@ var cars = [
 
 $(document).ready(function() {
 
-function displayCars(arr) {
-
-	var out = "";
-	var i;
-	for(i=0 ; i<arr.length ; i++) {
-		out += "<div class=\"col-sm-6 col-md-4\"><div class=\"car\"><img src=\"" + arr[i].imgUrl + "\" height=\"200\" width=\"300\" alt=\"...\"><div class=\"caption\"><h3>" + arr[i].make + " " + arr[i].model + "</h3><h3 class=\"price\">&pound;" + arr[i].price + "</h3><p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">More Detail</a> <a href=\"mailto:email@email.com\" class=\"btn btn-default\" role=\"button\">Enquire</a><div class=\"extra-content\"><h1>Blah content<h1></div></p></div></div></div>";
-	}
-	document.getElementById("cars").innerHTML = out;
-	$(".extra-content").slideUp();
+function showCar(arr, index) {
+	return 	"<div>" +
+				"<div class=\"car\">" +
+					"<img src=\"" + arr[index].imgUrl + "\" height=\"200\" width=\"300\" alt=\"...\">" +
+					"<div class=\"caption\">" +
+						"<h3>" + arr[index].make + " " + arr[index].model + "</h3>" +
+						"<h3 class=\"price\">&pound;" + arr[index].price + "</h3>" +
+						"<p>" +
+							"<a href=\"#\" class=\"btn btn-primary\" role=\"button\">More Detail</a>" +
+							"<a href=\"mailto:email@email.com\" class=\"btn btn-default\" role=\"button\">Enquire</a>" +
+							"<div class=\"extra-content\">" +
+								"<table class=\"table\">" +
+									"<tbody>" +
+										"<tr></tr>" +
+									"</tbody>" +
+								"</table>" +
+							"</div>" +
+						"</p>" +
+					"</div>" +
+				"</div>" +
+			"</div>";
 }
 
 function displayRecent(arr) {
@@ -43,7 +55,7 @@ function displayRecent(arr) {
 	var out = "";
 
 	for(var i = 0; i < 5; i++) {
-		out += "<div class=\"\"><div class=\"car\"><img src=\"" + arr[i].imgUrl + "\" height=\"200\" width=\"300\" alt=\"...\"><div class=\"caption\"><h3>" + arr[i].make + " " + arr[i].model + "</h3><h3 class=\"price\">&pound;" + arr[i].price + "</h3><p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">More Detail</a> <a href=\"mailto:email@email.com\" class=\"btn btn-default\" role=\"button\">Enquire</a><div class=\"extra-content\"><h1>Blah content<h1></div></p></div></div></div>";
+		out += showCar(arr, i);
 	}
 	document.getElementById("recent").innerHTML = out;
 	$(".extra-content").slideUp();
@@ -58,13 +70,12 @@ function displayCheapest(arr){
 	var out = "";
 
 	for(var i = 0; i < 5; i++) {
-		out += "<div class=\"\"><div class=\"car\"><img src=\"" + arr[i].imgUrl + "\" height=\"200\" width=\"300\" alt=\"...\"><div class=\"caption\"><h3>" + arr[i].make + " " + arr[i].model + "</h3><h3 class=\"price\">&pound;" + arr[i].price + "</h3><p><a href=\"#\" class=\"btn btn-primary\" role=\"button\">More Detail</a> <a href=\"mailto:email@email.com\" class=\"btn btn-default\" role=\"button\">Enquire</a><div class=\"extra-content\"><h1>Blah content<h1></div></p></div></div></div>";
+		out += showCar(arr, i);
 	}
 	document.getElementById("cheapest").innerHTML = out;
 	$(".extra-content").slideUp();
 }
 
-//displayCars(cars);
 displayRecent(cars);
 displayCheapest(cars);
 
