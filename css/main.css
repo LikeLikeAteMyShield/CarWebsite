@@ -63,3 +63,14 @@ body {
 				-webkit-transform: translateX(-50%) translateY(-50%);
 				transform: translateX(-50%) translateY(-50%);
 			}
+@media (max-width: 900px) {
+	#vid {
+  	max-height: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+	#vid {
+  	max-height: 100px;
+  }
+}
