@@ -32,6 +32,12 @@ body {
   }
 }
 
+@media (max-width: 900px) {
+	#delorean {
+  	max-height: 100px;
+  }
+}
+
 #map-canvas {
         width: 500px;
         height: 400px;
