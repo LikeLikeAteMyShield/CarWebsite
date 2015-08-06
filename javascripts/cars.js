@@ -36,7 +36,18 @@ function showCar(arr, index) {
 							"<div class=\"extra-content\">" +
 								"<table class=\"table\">" +
 									"<tbody>" +
-										"<tr></tr>" +
+										"<tr>" +
+											"<th>Year</th><td>" + arr[index].year + "</td>" +
+										"</tr>" +
+										"<tr>" +
+											"<th>Type</th><td>" + arr[index].type + "</td>" +
+										"</tr>" +
+										"<tr>" +
+											"<th>Doors</th><td>" + arr[index].doors + "</td>" +
+										"</tr>" +
+										"<tr>" +
+											"<th>Miles</th><td>" + arr[index].miles + "</td>" +
+										"</tr>" +
 									"</tbody>" +
 								"</table>" +
 							"</div>" +
