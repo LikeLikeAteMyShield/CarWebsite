@@ -7,9 +7,6 @@ body {
 	color: red;
 }
 
-#extra-content {
-	/*visibility: hidden;*/
-}
 #header{
 	background-image: url("../images/headerbg.jpg");
 	background-repeat: no-repeat;
