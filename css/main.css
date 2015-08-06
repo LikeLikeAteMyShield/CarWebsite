@@ -47,6 +47,10 @@ body {
     box-shadow: 0 0 2px #5A5A5A;
 }
 
+.featured {
+	background-color: #000;
+}
+
 #vid {
 				opacity: 0.4;
 				position: fixed;
