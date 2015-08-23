@@ -40,11 +40,17 @@ body {
         height: 400px;
 }
 
+
 .well {
 	background: #ffffff;
 	-moz-box-shadow: 0 0 2px #5A5A5A;
     -webkit-box-shadow: 0 0 2px #5A5A5A;
     box-shadow: 0 0 2px #5A5A5A;
+}
+
+.well .cheapest {
+	
+	background-color: #5A5A5A;
 }
 
 .featured {
