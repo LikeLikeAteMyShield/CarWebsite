@@ -40,6 +40,9 @@ body {
         height: 400px;
 }
 
+.result-image {
+	margin-top: 20px;
+}
 
 .well {
 	background: #ffffff;

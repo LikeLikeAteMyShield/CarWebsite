@@ -57,6 +57,40 @@ function showCar(arr, index) {
 			"</div>";
 }
 
+function showResult(arr, index) {
+	return 	"<div class=\"row\">" +
+				"<div class=\"car\">" +
+					"<div class=\"col-md-6\">" +
+					"<img class=\"result-image\" src=\"" + arr[index].imgUrl + "\" height=\"200\" width=\"300\" alt=\"...\">" +
+					"</div>" +
+					"<div class=\"col-md-6\">" +
+						"<h3>" + arr[index].make + " " + arr[index].model + "</h3>" +
+						"<h3 class=\"price\">&pound;" + arr[index].price + "</h3>" +
+						"<p>" +
+							"<div class=\"extra-content\">" +
+								"<table class=\"table\">" +
+									"<tbody>" +
+										"<tr>" +
+											"<th>Year</th><td>" + arr[index].year + "</td>" +
+										"</tr>" +
+										"<tr>" +
+											"<th>Type</th><td>" + arr[index].type + "</td>" +
+										"</tr>" +
+										"<tr>" +
+											"<th>Doors</th><td>" + arr[index].doors + "</td>" +
+										"</tr>" +
+										"<tr>" +
+											"<th>Miles</th><td>" + arr[index].miles + "</td>" +
+										"</tr>" +
+									"</tbody>" +
+								"</table>" +
+							"</div>" +
+						"</p>" +
+					"</div>" +
+				"</div>" +
+			"</div>";
+}
+
 function displayRecent(arr) {
 
 	arr.sort(function(a,b) {
@@ -68,8 +102,10 @@ function displayRecent(arr) {
 	for(var i = 0; i < 5; i++) {
 		out += showCar(arr, i);
 	}
-	document.getElementById("recent").innerHTML = out;
-	$(".extra-content").slideUp();
+	if(document.getElementById("recent")!=null){
+		document.getElementById("recent").innerHTML = out;
+		$(".extra-content").slideUp();
+	}
 }
 
 function displayCheapest(arr){
@@ -83,12 +119,27 @@ function displayCheapest(arr){
 	for(var i = 0; i < 5; i++) {
 		out += showCar(arr, i);
 	}
-	document.getElementById("cheapest").innerHTML = out;
-	$(".extra-content").slideUp();
+	if(document.getElementById("cheapest")!=null){
+		document.getElementById("cheapest").innerHTML = out;
+		$(".extra-content").slideUp();
+	}
+}
+
+function displaySearchResults(arr) {
+
+	var out = "";
+
+	for(var i=0; i<arr.length; i++) {
+		out += showResult(arr, i);
+	}
+	if(document.getElementById("results")!=null){
+		document.getElementById("results").innerHTML = out;
+	}
 }
 
 displayRecent(cars);
 displayCheapest(cars);
+displaySearchResults(cars);
 
 $(".btn-primary").click(function() {
 	event.preventDefault();
