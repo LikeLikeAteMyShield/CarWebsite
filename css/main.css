@@ -14,6 +14,41 @@ body {
 	text-align: center;
 	margin-bottom: 0px;
 }
+
+#topPage{
+	background-image: url("../images/top.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+.topimage {
+	float: left;
+}
+
+.welcome {
+	float: float
+	}
+
+.welcome h1{
+	color:  #ffffff;
+	font: normal 80px;
+	margin: 0 0 10px;
+}
+
+.welcome h2{
+	color: #ffffff;
+	font: normal 60px;
+	margin: 0 0 10px;
+}
+
+.welcome h2 span{
+	font: normal 50px 'Cookie', cursive;
+	margin: 0 0 10px;
+	color:  #FA5858;
+}
+
 .carList {
 	text-align: center;
 }
@@ -32,6 +67,18 @@ body {
 @media (max-width: 900px) {
 	#delorean {
   	max-height: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  #audir8 {
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  #audir8 {
+    max-height: 150px;
   }
 }
 
