@@ -1,0 +1,60 @@
+
+#specs {
+  padding-top: 50px;
+}
+#specs .dtable {
+  marign: 0;
+  padding: 0;
+  font-family: 'Robot', sans-serif;
+}
+#specs .dtable .specs {
+  padding-bottom: 30px;
+}
+#specs .dtable .specs .dheader {
+  position: relative;
+  background: #c72e2e;
+  padding: 22px 22px;
+  text-align: center;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+#specs .dtable .specs .dheader .dtitle {
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+#specs .dtable .specs .dheader{
+  font-size: 70px;
+  font-weight: 700;
+  color: #ffffff;
+  position: relative;
+  text-align: center;
+}
+
+#specs .dtable .specs-list {
+  padding: 20px 0 40px 0;
+  background: #ffffff;
+  border: 1px solid #000;
+}
+#specs .dtable .specs-list ul {
+  padding: 0px;
+  display: table;
+  margin: 0px auto;
+}
+#specs .dtable .specs-list ul li {
+  list-style: none;
+  border-bottom: 1px solid #c72e2e;
+  color: #000;
+  font-size: 16px;
+  line-height: 42px;
+}
+#specs .dtable .specs-list ul li:last-child {
+  border: none;
+}
+
+#specs .dtable .specs-list ul li span {
+  color: #c72e2e;
+}
