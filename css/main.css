@@ -3,6 +3,10 @@ body {
   background: #e7e3e3;
 }
 
+.filter {
+	font-weight: bold;
+}
+
 .price {
 	color: red;
 }

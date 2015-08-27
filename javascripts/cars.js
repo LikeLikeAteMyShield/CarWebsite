@@ -153,4 +153,78 @@ $(".btn-primary").click(function() {
 	}
 });
 
+$(".make-filter").click(function() {
+
+	event.preventDefault();
+	if($(this).text() == "All")
+		displaySearchResults(cars);
+	else{
+		var arr = [];
+		for(var i=0; i<cars.length; i++){
+			if(cars[i].make == $(this).text())
+				arr.push(cars[i]);
+		}
+		displaySearchResults(arr);
+	}
+});
+
+$("#old-to-new").click(function() {
+
+	event.preventDefault();
+	var arr = cars;
+	arr.sort(function(a,b) {
+		return a.year - b.year;
+	});
+
+	displaySearchResults(arr);
+});
+
+$("#new-to-old").click(function() {
+
+	event.preventDefault();
+	var arr = cars;
+	arr.sort(function(a,b) {
+		return b.year - a.year;
+	});
+
+	displaySearchResults(arr);
+});
+
+$(".type-filter").click(function() {
+
+	event.preventDefault();
+	if($(this).text() == "All")
+		displaySearchResults(cars);
+	else{
+		var arr = [];
+		for(var i=0; i<cars.length; i++){
+			if(cars[i].type == $(this).text())
+				arr.push(cars[i]);
+		}
+		displaySearchResults(arr);
+	}
+});
+
+$("#low-to-high").click(function() {
+
+	event.preventDefault();
+	var arr = cars;
+	arr.sort(function(a,b) {
+		return a.price - b.price;
+	});
+
+	displaySearchResults(arr);
+});
+
+$("#high-to-low").click(function() {
+
+	event.preventDefault();
+	var arr = cars;
+	arr.sort(function(a,b) {
+		return b.price - a.price;
+	});
+
+	displaySearchResults(arr);
+});
+
 });
